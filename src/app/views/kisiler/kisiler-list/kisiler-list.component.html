@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="card-deck mb-3 text-center">
+
+
+    <div class="card mb-4 box-shadow">
+      <div class="card-header">
+        <button (click)="YeniKisiEkle()" href="#" class="btn btn-primary float-right"><span class="fa fa-plus-circle"></span> Yeni Kişi Ekle</button>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table id="mytable" class="table table-bordred table-striped">
+            <thead>
+              <th>Adı Soyadı</th>
+              <th>Telefon</th>
+              <th>Doğum Tarihi</th>
+              <th>Düzenle</th>
+              <th>Sil</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let kisi of kisiler">
+                <td>{{kisi.adiSoyadi}}</td>
+                <td>{{kisi.telefon}}</td>
+                <td>{{kisi.dogumTarihiTxt}}</td>
+                <td>
+                  <p>
+                    <button (click)="kisiDuzenle(kisi.id)"
+                      class="btn btn-info btn-xs">
+                      <span class="fa fa-edit"></span>
+                    </button>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    <button (click)="kisiSil(kisi.id)"
+                      class="btn btn-danger btn-xs">
+                      <span class="fa fa-trash"></span>
+                    </button>
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</div>
